@@ -1,0 +1,1 @@
+Copy database rail_connect folder to C:\xampp\mysql\data

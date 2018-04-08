@@ -9,17 +9,6 @@
   border:solid;
 	border-color:blue; 	
 }
-.Status{
-	background:url(../images/banner.jpg)no-repeat;
-	background-position: center;
-	background-size:900px 400px;
-	color: white;
-	text-align:left;
-	font-size:50px;
-	height: 150px;
-	border:solid;
-	border-color:#0f0f00;
-}
 .Login{
 	height: 150px;
 	border:solid;
@@ -213,4 +202,15 @@ span.psw {
 
 .sbutton{
 	background-color:#38B0DE;
+}
+.Status{
+    background:url(../images/banner.jpg)no-repeat;
+    background-position: center;
+    background-size:900px 400px;
+    color: white;
+    text-align:left;
+    font-size:50px;
+    height: 150px;
+    border:solid;
+    border-color:#0f0f00;
 }
