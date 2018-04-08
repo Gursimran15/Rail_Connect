@@ -1,0 +1,92 @@
+*{
+	box-sizing:border-box;
+}
+.Connect{
+	background:url(../images/logo.jpg)no-repeat;
+  background-position: center;
+  background-size:200px;
+  height: 150px;	
+  border:solid;
+	border-color:blue; 	
+}
+.Status{
+	background:url(../images/banner.jpg)no-repeat;
+	background-position: center;
+	background-size:900px 400px;
+	color: white;
+	text-align:left;
+	font-size:50px;
+	height: 150px;
+	border:solid;
+	border-color:#0f0f00;
+}
+.Login{
+	height: 150px;
+	border:solid;
+	border-color:blue;
+}
+.bar{
+	height:600px;
+	border:solid;
+	border-color:red; 	
+}
+.An{
+	height:600px;
+	border:solid;
+border-color:purple;	
+}
+.box{
+	height:600px;
+	border:solid;
+border-color:grey;	
+}
+.box2{
+	height:600px;
+	border:solid;
+border-color:grey;
+background-color: yellow;	
+}
+.box2 table tr td{
+	border:solid;
+}
+#Item1-tile , #Item2-tile , #Item3-tile{
+	height: 200px;
+	width: 100%;
+	margin-bottom: 15px;
+	position:relative;
+	border:2px solid #0f0f0f;
+	overflow:hidden;
+}
+#Item1-tile:hover , #Item2-tile:hover , #Item3-tile:hover
+{
+box-shadow: 0 1px 5px 1px #cccccc;
+}
+#Item1-tile {
+	background:url(../images/i1.jpg)no-repeat;
+	background-position: center;
+} 
+#Item2-tile {
+	background:url(../images/i3.jpg)no-repeat;
+	background-position: center;
+}
+#Item2-tile {
+	background:url(../images/i2.jpg)no-repeat;
+	background-position: center;
+}
+
+#Item1-tile span , #Item2-tile span, #Item3-tile span
+{
+position: absolute;
+bottom: 0;
+right: 0;
+width:100%;
+text-align:center;
+font-size:1.6em;
+text-transform:uppercase;
+background-color: #000;
+color:#fff;
+opacity: .8;
+}
+.menu a{
+	color: red;
+}
