@@ -21,7 +21,9 @@ session_start();
       </div></div></div></nav>
         <nav id="nav" class="">
           <ul>
-            <li><strong><?php if(isset($_SESSION['uid'])){ ?>
+            <li><strong><?php if($_SESSION['Admin']=='1'){ ?>
+              <a href="../Admin/admin.php">DASHBOARD</a>
+              <?php } elseif($_SESSION['Admin']=='0'){ ?>
               <a href="../dashboard/dashboard.php">DASHBOARD</a>
             <?php } else { ?><a href="../index.php">HOME</a>
             <?php } ?></strong></strong></li>
@@ -29,8 +31,8 @@ session_start();
             <li><strong><a href="../Ticket/ticket.php">TICKET RESERVATION</a></strong></li>
             <li><strong><div class="dropdown"><a class="dropbtn">ENQUIRY</a>
               <div class="dropdown-content">
-              <a href="dropdown">Train Details</a>
-              <a href="dropdown">Fair Enquiry</a>
+              <a href="../traind/traind.php">Train Details</a>
+              <a href="../fare/fare.php">Fare Enquiry</a>
               <a href="Cancelled_trains.php" class="selected">Cancelled_trains</a>
               <a href="../Train_route/Route_retriever.php">Train Route Information</a></div>
             </div></strong></li>
@@ -46,7 +48,7 @@ session_start();
 <form action="?"  method="post">
    Enter the Date:<br>
   
-  <input type="date" name="date"><br><br>
+  <input type="date" name="date" required><br><br>
   <input type="submit" value="Submit" name="Submit">
 </form>
 </div>
