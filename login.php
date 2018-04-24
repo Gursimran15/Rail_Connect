@@ -6,11 +6,17 @@ if(array_key_exists("logout",$_GET)){
     $_COOKIE['uid']="";
 }
 elseif ((array_key_exists("uid",$_SESSION) AND $_SESSION['uid']) OR (array_key_exists("uid",$_COOKIE) AND $_COOKIE['uid'])) {
-if($_SESSION['uid']=='10' || $_SESSION['uid']=='1')
+
+$q=mysqli_query(mysqli_connect("localhost","root","","rail_connect"),"SELECT * FROM users");
+                      if($q==TRUE){
+                        for($i=1;$row['uid']!=$_SESSION['uid'];$i++)
+                        $row=mysqli_fetch_array($q);
+                        $_SESSION['Admin']=$row['Admin'];
+    if($row['Admin']=='1')
     header("Location:Admin/admin.php");
     else
     header("Location:dashboard/dashboard.php");   
-}
+}}
 if(array_key_exists("submit",$_POST)){
 $db=mysqli_connect("localhost","root","","rail_connect");
 if(mysqli_connect_error()){
@@ -24,10 +30,15 @@ if(isset($row)){
     if(isset($_POST['remember']) && ($_POST['remember']=='on' || $_POST['remember']=='1')){//always setting the cookie
         setcookie("uid",$row['uid'],time()+ 60*60*24*365);
     }
-    if($row['uid']=='10' || $row['uid']=='1')
+    $q=mysqli_query($db,"SELECT * FROM users");
+                      if($q==TRUE){
+                         for($i=1;$row['uid']!=$_SESSION['uid'];$i++)
+                        $row=mysqli_fetch_array($q);
+                    $_SESSION['Admin']=$row['Admin'];
+    if($row['Admin']=='1')
     header("Location:Admin/admin.php");
     else
-    header("Location:dashboard/dashboard.php");   
+    header("Location:dashboard/dashboard.php");}   
 }
 else
 {
@@ -158,7 +169,7 @@ span.psw {
                       <label for="psw" style="color:#f0f0f0"><b>Password</b></label>
                       <input type="password" id="psw" placeholder="Enter Password" name="password" required><br>
                       <label style="color:#f0f0f0">
-                            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px" style="color:#f0f0f0"> Hey!Remember Me.
+                            <input type="checkbox" checked="checked" name="remember" value="1" style="margin-bottom:15px" style="color:#f0f0f0"> Hey!Remember Me.
                                 </label><br>
                        <a href="index.php"><button type="button" class="cancelbtn">Cancel</button></a>
                        <button type="submit" name="submit">Login</button></div>

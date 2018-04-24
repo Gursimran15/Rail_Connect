@@ -21,16 +21,18 @@ session_start();
       </div></div></div></nav>
         <nav id="nav" class="">
           <ul>
-            <li><strong><?php if(isset($_SESSION['uid'])){ ?>
+            <li><strong><?php if($_SESSION['Admin']=='1'){ ?>
+              <a href="../Admin/admin.php">DASHBOARD</a>
+              <?php } elseif($_SESSION['Admin']=='0'){ ?>
               <a href="../dashboard/dashboard.php">DASHBOARD</a>
             <?php } else { ?><a href="../index.php">HOME</a>
-            <?php } ?></strong></strong></li>
+            <?php } ?></strong></li>
             <li><strong><a href="../statusretriever.php">LIVE STATUS</a></strong></li>
             <li><strong><a href="../Ticket/ticket.php">TICKET RESERVATION</a></strong></li>
             <li><strong><div class="dropdown"><a class="dropbtn">ENQUIRY</a>
               <div class="dropdown-content">
-              <a href="dropdown">Train Details</a>
-              <a href="dropdown">Fair Enquiry</a>
+             <a href="../traind/traind.php">Train Details</a>
+              <a href="../fare/fare.php">Fare Enquiry</a>
               <a href="../Cancelled_trains/Cancelled_trains.php">Cancelled_trains</a>
               <a href="#" class="selected">Train Route Information</a></div>
             </div></strong></li>
@@ -41,11 +43,11 @@ session_start();
         </nav>
       </header>
        <section>
-       <div style="padding-top:100px">
+       <div style="padding:100px; width: 80%;">
     <b><h1>Train Route Information</h1></b>
 <form action ="?" method="post">
 Train Number : <br>
-<input type="text"  name="trainid" >
+<input type="text"  name="trainid" required>
 <input type ="submit" value ="Submit" name ="submit">
 </form>
 </div>

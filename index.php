@@ -43,8 +43,8 @@
 						<li><strong><a href="Ticket/ticket.php">TICKET RESERVATION</a></strong></li>
 						<li><strong><div class="dropdown"><a class="dropbtn">ENQUIRY</a>
 							<div class="dropdown-content">
-							<a href="dropdown">Train Details</a>
-							<a href="dropdown">Fair Enquiry</a>
+							<a href="traind/traind.php">Train Details</a>
+							<a href="fare/fare.php">Fare Enquiry</a>
 							<a href="Cancelled_trains/Cancelled_trains.php">Cancelled_trains</a>
 							<a href="Train_route/Route_retriever.php">Train Route Information</a></div>
 						</div></strong></li>

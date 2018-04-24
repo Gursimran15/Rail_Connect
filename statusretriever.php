@@ -21,16 +21,18 @@ session_start();
       </div></div></div></nav>
         <nav id="nav" class="">
           <ul>
-            <li><strong><?php if(isset($_SESSION['uid'])){ ?>
-              <a href="dashboard/dashboard.php">DASHBOARD</a>
-            <?php } else { ?><a href="index.php">HOME</a>
-            <?php } ?></strong></strong></li>
+            <li><strong><?php if($_SESSION['Admin']=='1'){ ?>
+              <a href="../Admin/admin.php">DASHBOARD</a>
+              <?php } elseif($_SESSION['Admin']=='0'){ ?>
+              <a href="../dashboard/dashboard.php">DASHBOARD</a>
+            <?php } else { ?><a href="../index.php">HOME</a>
+            <?php } ?></strong></li>
             <li><strong><a href="statusretriever.php" class="selected">LIVE STATUS</a></strong></li>
             <li><strong><a href="Ticket/ticket.php">TICKET RESERVATION</a></strong></li>
             <li><strong><div class="dropdown"><a class="dropbtn">ENQUIRY</a>
               <div class="dropdown-content">
-              <a href="dropdown">Train Details</a>
-              <a href="dropdown">Fair Enquiry</a>
+              <a href="traind/traind.php">Train Details</a>
+              <a href="fare/fare.php">Fare Enquiry</a>
               <a href="Cancelled_trains/Cancelled_trains.php">Cancelled_trains</a>
               <a href="Train_route/Route_retriever.php">Train Route Information</a></div>
             </div></strong></li>
@@ -45,9 +47,9 @@ session_start();
     <b><h1>Live Train Status</h1></b>
 <form action="?"  method="post">
   Train number:<br>
-  <input type="number" name="Tnumber"><br><br>
+  <input type="number" name="Tnumber" required><br><br>
   Train Start Date :<br>
-  <input type= "date" name="startdate"> <br><br>
+  <input type= "date" name="startdate" required> <br><br>
   <input type="submit" value="Submit" name ="submit">
 </form></div></section>  
 </body>

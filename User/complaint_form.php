@@ -44,17 +44,17 @@ input[type=submit]:hover {
 <div class="container">
   <form action="?" method="POST">
     <label for="fname">Name</label>
-    <input type="text" id="fname" name="name" placeholder="Your name..">
+    <input type="text" id="fname" name="name" placeholder="Your name.." required>
 
     <label for="lname">Username</label>
-    <input type="text" id="lname" name="Email" placeholder="Email">
+    <input type="text" id="lname" name="Email" placeholder="Email" required>
 
      <label for="pnr_no">Pnr Number</label>
-    <input type="text" id="lname" name="pnr_no" placeholder="Pnr Number..">
+    <input type="text" id="lname" name="pnr_no" placeholder="Pnr Number.." required>
     
 
     <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
 
     <input type="submit" value="Submit" name="submit">
   </form>
